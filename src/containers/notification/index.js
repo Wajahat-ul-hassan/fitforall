@@ -3,9 +3,7 @@ import { View, Text, TouchableOpacity, ScrollView, Image, StyleSheet } from "rea
 import { Header, Notificationcomponent } from "../../component"
 import { Icon } from 'react-native-elements';
 import { Notificationbell } from "../../assets";
-
-// import model form native base 
-
+import Modal from "react-native-modal"
 
 const Notification = () => {
     const [showModal, setShowModal] = useState(false);
@@ -82,7 +80,19 @@ const Notification = () => {
                 </View>
 
                 {/* Model area */}
-               
+                <Modal isVisible={showModal} >
+                    <View style={{backgroundColor: "#fff",padding:10 , borderRadius:15}}>
+                        <TouchableOpacity onPress={() => setShowModal(false)} style={{alignSelf:"flex-end"}}>
+                            <Icon type="font-awesome" name="close" color={"#707070"} size={23} />
+                        </TouchableOpacity>
+                        <View style={styles.modelcontiner}>
+                            <Text style={styles.modelheader}>New Notification</Text>
+                            <Text style={styles.modelsubheading}>Check Out New Exercise in
+                                Animated Stories</Text>
+                            <Text style={styles.modeloffer}>Get 20 % Off</Text>
+                        </View>
+                    </View>
+                </Modal>
             </ScrollView>
 
         </View>
@@ -111,7 +121,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         textAlign: "center",
         alignItems: "center",
-        paddingBottom: 100,
+        padding: 30
     },
     modelheader: {
         color: "#000000",

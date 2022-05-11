@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, Image, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import { Icon } from 'react-native-elements';
-
+import Modal from 'react-native-modal';
 // import icon
 import { Share, profile, clipboard, twitter, whatsapp, facebook } from "../../assets/index"
 
@@ -199,7 +199,35 @@ const Foot = () => {
                 </View>
 
                 {/* Model area */}
-               
+                <Modal isVisible={showModal} >
+                <View style={{backgroundColor:"#fff", paddingBottom:25}}>
+                    <View style={{ flexDirection: "row", justifyContent: "space-between",paddingHorizontal: 30, paddingVertical:10}}>
+                        <Text style={{ color: "#707070" ,fontSize:18 ,fontWeight:"bold" }}>Share</Text>
+                        <TouchableOpacity onPress={() => setShowModal(false)}>
+                            <Icon type="font-awesome" name="close" color={"#707070"} size={23} />
+                        </TouchableOpacity>
+                    </View>
+                    <View style={styles.modelcontiner}>
+                        <View style={styles.modelbody}>
+                            <Image style={styles.shareicon} source={clipboard} />
+                            <Text style={styles.icontext}>Copy</Text>
+                        </View>
+                        <View style={styles.modelbody}>
+                            <Image style={styles.shareicon} source={whatsapp} />
+                            <Text style={styles.icontext}>Whatsapp</Text>
+                        </View>
+                        <View style={styles.modelbody}>
+                            <Image style={styles.shareicon} source={facebook} />
+                            <Text style={styles.icontext}>Facebook</Text>
+                        </View>
+                        <View style={styles.modelbody}>
+                            <Image style={styles.shareicon} source={twitter} />
+                            <Text style={styles.icontext}>Twitter</Text>
+                        </View>
+
+                    </View>
+                    </View>
+                </Modal>
             </ScrollView>
 
         </View>
@@ -349,7 +377,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         textAlign: "center",
         alignItems: "center",
-        padding: 10,
+        // padding: 10,
     },
     shareicon: {
         width: 50,
@@ -358,9 +386,8 @@ const styles = StyleSheet.create({
     },
     modelcontiner: {
         flexDirection: "row",
-        justifyContent: "center",
-        textAlign: "center",
-        alignSelf: "center"
+        justifyContent: "space-evenly",
+        backgroundColor: "#fff"
     },
     icontext: {
         color: "#707070",

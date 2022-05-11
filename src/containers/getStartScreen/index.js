@@ -6,6 +6,7 @@ import { Button } from "../../component";
 const GetStartScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <View style={{ height: 300, justifyContent: 'center', alignItems: 'center', marginTop: 80 }}>
                 <Image resizeMode='contain' style={styles.img1} source={group_4} />
             </View>
@@ -15,7 +16,8 @@ const GetStartScreen = ({ navigation }) => {
                     get in better shape and embrace a healthy lifestyle</Text>
             </View>
             <Button btnonpress={() => navigation.navigate('SignIn')} btnViewStyle={styles.btn} title="Get Started" />
-        </View>
+            </ScrollView>
+            </View>
     )
 }
 

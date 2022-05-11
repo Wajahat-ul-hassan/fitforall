@@ -3,6 +3,7 @@ import { View, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 import { Header, Vedio, Button } from "../../component";
 import { Favorities } from "../../assets";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 
 const TrainingVideos = (props) => {
@@ -80,6 +81,8 @@ const TrainingVideos = (props) => {
                     <>
                         {beginnerData.map((val) => {
                             return (
+                                <TouchableOpacity onPress={()=>props.navigation.navigate("Foot")}>
+                                
                                 <Vedio
                                     videoUrl={'http://mkv22.cdnhdfriday.com/mkv-bollywood/Bunty%20Aur%20Bubli%202%202021%20Hindi%20DVDRip%20HDFRiday.CoM.mkv'}
                                     thumbnailUrl={'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_05/2732526/190128-exercise-gym-ac-556p.jpg'}
@@ -87,6 +90,7 @@ const TrainingVideos = (props) => {
                                     title={val?.title} time={val?.time} name={val?.userName} views={val?.views} later={val?.postTiming}
                                     onPressTitle={() => props.navigation.navigate("Foot")}
                                 />
+                                </TouchableOpacity>
                             )
                         })
                         }
@@ -97,6 +101,7 @@ const TrainingVideos = (props) => {
                     <>
                         {advanceData.map((val) => {
                             return (
+                                <TouchableOpacity onPress={()=>props.navigation.navigate("Foot")}>
                                 <Vedio
                                     videoUrl={'http://mkv22.cdnhdfriday.com/mkv-bollywood/Bunty%20Aur%20Bubli%202%202021%20Hindi%20DVDRip%20HDFRiday.CoM.mkv'}
                                     thumbnailUrl={'https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1024-512,f_auto,q_auto:best/newscms/2019_05/2732526/190128-exercise-gym-ac-556p.jpg'}
@@ -106,6 +111,7 @@ const TrainingVideos = (props) => {
                                     videoplyer={styles.videoplyer}
                                     title={val?.title} time={val?.time} name={val?.userName} views={val?.views} later={val?.postTiming}
                                 />
+                                </TouchableOpacity>
                             )
                         })
                         }

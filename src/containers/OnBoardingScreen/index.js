@@ -16,6 +16,7 @@ const OnBoardingScreen = (props) => {
                 onIndexChanged={(index) => console.log('currentindex', index, currentindex)}
                 index={currentindex}>
 
+                <ScrollView>
                 <View style={styles.continer_2}>
                     <View style={styles.child_1}>
                         <ImageBackground source={Group1} resizeMode="cover" style={styles.image} >
@@ -37,6 +38,7 @@ const OnBoardingScreen = (props) => {
                     <Button btnonpress={() => setCurrentindex(currentindex + 1)} btnViewStyle={styles.btn} btntxtstyle={styles.btntext} title="Start" />
                 </View>
 
+                </ScrollView>
 
 
                 <View style={styles.slide2}>

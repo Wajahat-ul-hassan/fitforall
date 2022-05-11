@@ -3,7 +3,7 @@ import { View, Text, ScrollView, TouchableOpacity, Image, StyleSheet, TextInput,
 import { Header, Button } from "../../component"
 import { profile } from "../../assets"
 import { Icon } from 'react-native-elements';
-
+import Modal from "react-native-modal";
 
 const Editprofile = (props) => {
 
@@ -95,7 +95,46 @@ const Editprofile = (props) => {
 
                     {/* MODAL VIEW */}
 
-                  
+                    <Modal isVisible={showModal} >
+                        <View style={styles.modelcontiner}>
+                            <View style={{ marginHorizontal: 20 }}>
+                                <View style={{ marginBottom: 20, marginTop: 20, flexDirection: "row", justifyContent: "space-between" }}>
+                                    <Text style={{ fontSize: 20, fontWeight: "bold", color: "#404040" }}>Change Password</Text>
+                                    <TouchableOpacity onPress={() => setShowModal(false)}>
+                                        <Icon type="antdesign" name="closecircleo" color={"#000"} size={23} />
+                                    </TouchableOpacity>
+                                </View>
+
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={styles.txt}>
+                                        Old Password
+                                    </Text>
+                                    <TextInput style={styles.input} />
+                                </View>
+
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={styles.txt}>
+                                        New Password
+                                    </Text>
+                                    <TextInput style={styles.input} />
+                                </View>
+
+                                <View style={{ marginTop: 10 }}>
+                                    <Text style={styles.txt}>
+                                        Conform Password
+                                    </Text>
+                                    <TextInput style={styles.input} />
+                                </View>
+                            </View>
+
+
+                            <View style={styles.footerarea}>
+                                <Button btnonpress={() => { setShowModal(false) }} btnViewStyle={styles.footerbtn1} btntxtstyle={styles.btntext} title="Cancel" />
+                                <Button btnonpress={() => { setShowModal(false), props.navigation.navigate("Myprofile") }} btnViewStyle={styles.footerbtn} btntxtstyle={styles.btntext} title="Confirm" />
+                            </View>
+                        </View>
+                    </Modal>
+
 
 
 
@@ -131,6 +170,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-evenly",
+        marginTop: 20,
         // backgroundColor: "#000",
         width: "100%",
     },
@@ -149,7 +189,22 @@ const styles = StyleSheet.create({
         fontSize: 14,
     },
     modelcontiner: {
-        paddingBottom: 20,
+        borderRadius: 15,
+        backgroundColor: "#EAEAEA"
+    },
+    txt: {
+        paddingLeft: 10,
+        fontSize: 12,
+        color: "#404040",
+        marginBottom: 5
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: "#FF9B70",
+        borderRadius: 12,
+        height: 45,
+        backgroundColor: "#ffffff",
+        color:"#000"
     }
 
 })
