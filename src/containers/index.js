@@ -24,7 +24,14 @@ import Foot from "./Foot"
 import Login from "./Login";
 import NewPassword from "./NewPassword";
 import Profile from "./profile";
+import SchoolProfile from "./SchoolProfile";
 import Trainingvideo from "./TrainingVideos";
+import LoginType from "./LoginType";
+import SchoolRegister from "./SchoolRegister";
+import Classess from './Classes';
+import ReviewsRatingsVideos from './Reviews&RatingsVideos';
+import HideChats from './hidechats';
+import Reviewrating from "./Review&Rating";
 import ResetPasswordSuccess from './ResetPasswordSuccess'
 
 
@@ -56,5 +63,12 @@ export {
     Animatedstories,
     Foot,
     AnimatedStories_2,
-    ResetPasswordSuccess
+    ResetPasswordSuccess,
+    LoginType,
+    SchoolRegister,
+    ReviewsRatingsVideos,
+    HideChats,
+    Classess,
+    Reviewrating,
+    SchoolProfile
 }

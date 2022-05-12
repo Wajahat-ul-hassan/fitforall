@@ -15,7 +15,7 @@ const GetStartScreen = ({ navigation }) => {
                 <Text style={styles.subheading}>Personalized workouts will help you gain strength,
                     get in better shape and embrace a healthy lifestyle</Text>
             </View>
-            <Button btnonpress={() => navigation.navigate('SignIn')} btnViewStyle={styles.btn} title="Get Started" />
+            <Button btnonpress={() => navigation.navigate('LoginType')} btnViewStyle={styles.btn} title="Get Started" />
             </ScrollView>
             </View>
     )
@@ -64,6 +64,7 @@ const styles = StyleSheet.create({
     btn: {
         marginHorizontal: 20,
         marginTop: 70,
+        marginBottom:50
     }
 })
 

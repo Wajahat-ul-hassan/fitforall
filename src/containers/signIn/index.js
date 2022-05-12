@@ -1,11 +1,15 @@
-import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, TextInput, Image } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, TextInput, Image, Dimensions } from 'react-native';
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch , useSelector } from 'react-redux';
 import { email, pass } from "../../assets/index";
 import { Button, Header, Input } from "../../component";
 import { updateUser } from '../../Redux/actions/authActions';
-
 const SignIn = (props) => {
+    const typeResponse = useSelector(state => state.authReducers.type);
+
+    console.log("🚀 ~ file: index.js ~ line 7 ~ ResetPasswordSuccess ~ typeResponse", typeResponse?.type)
+    // const { type } = props?.route?.params
+    // console.log("🚀 ~ file: index.js ~ line 9 ~ SignIn ~ type", type)
     const [password, setPassword] = useState();
     const [passwordError, setPasswordError] = useState();
     const [userEmail, setUserEmail] = useState();
@@ -18,6 +22,7 @@ const SignIn = (props) => {
             updateUser({
                 email: 'fitforall@gmail.com',
                 password: 'Fitforall@123',
+                type:typeResponse?.type
             }),
         );
     };
@@ -45,7 +50,7 @@ const SignIn = (props) => {
                     <View style={styles.child_3}>
                         <Text style={styles.child_3_Text_1}>Don’t have an account?</Text>
 
-                        <TouchableOpacity onPress={() => props.navigation.navigate('Register')}>
+                        <TouchableOpacity onPress={() => props.navigation.navigate( typeResponse?.type ==='School' ? 'SchoolRegister' :'Register')}>
                             <Text style={styles.child_3_Text_2}> / Sign Up</Text>
                         </TouchableOpacity>
                     </View>

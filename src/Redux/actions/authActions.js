@@ -10,5 +10,12 @@ const removeUser = () => {
     type: 'REMOVE_USER',
   };
 };
+const addType = (user) => {
+  return {
+    type: 'ADD_TYPE',
+    user,
 
-export {updateUser, removeUser};
+  };
+};
+
+export {updateUser, removeUser , addType};

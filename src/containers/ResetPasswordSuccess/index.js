@@ -1,8 +1,11 @@
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
 import React from 'react';
 import { Button, Header, Input, SuccessAlert } from "../../component";
-
+import {useSelector} from "react-redux";
 const ResetPasswordSuccess = (props) => {
+  const typeResponse = useSelector(state => state.authReducers.type);
+  console.log("🚀 ~ file: index.js ~ line 7 ~ ResetPasswordSuccess ~ typeResponse", typeResponse)
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: "#ffffff" }}>
             <Header title="Password Reset" lefticon={true} />

@@ -1,3 +1,5 @@
+
+import arrow from "./icons/arrow.png"
 import hamburfer from "./images/hamburger.png"
 import headerimg from "./images/Img.png"
 import email from "./icons/email.png"
@@ -47,20 +49,41 @@ import subscription from './icons/subscription.png';
 import favorites from './icons/favorites.png';
 import contact_us from './icons/contact_us.png';
 import logout from './icons/logout.png';
+import upload from './icons/upload.png'
+import school from './icons/school.png'
+import location from './icons/location.png'
+import class_1 from './images/class_1.png'
+import class_2 from './images/class_2.png'
+import class_3 from './images/class_3.png'
+import star from './icons/star.png'
 import check from './gif/check.json'
-import arrow from "./icons/arrow.png"
+import learning from './gif/learning.json'
+import stars from './gif/stars.json'
+
+
+
+
 
 export {
     Messageimage,
     Armpushupgif,
+    star,
+    learning,
+    stars,
+    upload,
+    school,
+    location,
     Squatgif,
+    class_2,
     Punchesgif,
     Jumpinggif,
+    class_3,
     Profilegif,
     Notificationgif,
     Historygif,
     ChatMessengergif,
     VideoPlayer,
+    class_1,
     History,
     Profilegfs,
     Notification,

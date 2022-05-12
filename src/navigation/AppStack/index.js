@@ -20,6 +20,11 @@ import {
   AnimatedStories_2,
   Profile,
   Trainingvideo,
+  HideChats,
+  ReviewsRatingsVideos,
+  Classess,
+  Reviewrating,
+  SchoolProfile
 } from '../../containers';
 
 
@@ -35,11 +40,17 @@ function AppStack({ navigation }) {
       <StackNavigator.Screen name="TermsConditions" component={TermsConditions} />
       <StackNavigator.Screen name="Favorites" component={Favorites} />
       <StackNavigator.Screen name="Contactus" component={Contactus} />
+      <StackNavigator.Screen name="HideChats" component={HideChats} />
+      <StackNavigator.Screen name="ReviewsRatingsVideos" component={ReviewsRatingsVideos} />
+      <StackNavigator.Screen name="Classess" component={Classess} />
       <StackNavigator.Screen name="WatchHistory" component={WatchHistory} />
+      <StackNavigator.Screen name="review&Rating" component={Reviewrating} />
       <StackNavigator.Screen name="Notification" component={Notification} />
       <StackNavigator.Screen name="Editprofile" component={Editprofile} />
       <StackNavigator.Screen name="Chats" component={Chats} />
       <StackNavigator.Screen name="Myprofile" component={Myprofile} />
+      <StackNavigator.Screen name="Schoolprofile" component={SchoolProfile} />
+
       <StackNavigator.Screen name="Help" component={Help} />
       <StackNavigator.Screen name="Message" component={Message} />
       <StackNavigator.Screen name="Traning" component={Traning} />

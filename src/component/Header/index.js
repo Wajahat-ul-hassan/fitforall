@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native"
+import { View, Text, StyleSheet, Image, TouchableOpacity ,StatusBar } from "react-native"
 import { arrow, Share, searchicon, searchlogo } from "../../assets";
 import { Icon } from 'react-native-elements';
 import { useNavigation } from '@react-navigation/native';
@@ -9,6 +9,8 @@ const Header = (props) => {
     const navigation = useNavigation();
     return (
         <View style={styles.header}>
+        <StatusBar
+        backgroundColor="#FF9B70"/>
             {lefticon ? (
                 <View style={styles.iconview}>
                     <TouchableOpacity onPress={() => navigation.goBack()}>

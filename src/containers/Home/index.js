@@ -4,47 +4,50 @@ import { Icon } from 'react-native-elements';
 import LottieView from 'lottie-react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import { hamburfer, headerimg, Runningmen, Chats, History, Profilegfs, Notification, VideoPlayer, Running, profile, Runninggif, videogif, Profilegif, Notificationgif, Historygif, ChatMessengergif } from '../../assets';
+import { hamburfer,stars, headerimg, Runningmen, Chats, History, Profilegfs, Notification, VideoPlayer, Running, learning, profile, Runninggif, videogif, Profilegif, Notificationgif, Historygif, ChatMessengergif } from '../../assets';
+import { useSelector } from 'react-redux';
 
-const DATA = [
-    {
-        image: videogif,
-        title: 'Training Videos',
-        screenName: "Traning"
-    },
-    {
-        image: Runninggif,
-        title: 'Animated Stories',
-        screenName: "AnimatedStories_2"
-    },
-    {
-        image: ChatMessengergif,
-        title: 'Chat',
-        screenName: "Chats"
-    },
-    {
-        image: Profilegif,
-        title: 'My Profile',
-        screenName: "Myprofile"
-    },
-    {
-        image: Historygif,
-        title: 'Watch History',
-        screenName: "WatchHistory"
-    },
-    {
-        image: Notificationgif,
-        title: 'Notifications',
-        screenName: "Notification"
-    },
-];
+
 
 const Home = (props) => {
+    const loginResponse = useSelector(state => state.authReducers.user);
+    console.log("🚀 ~ file: index.js ~ line 14 ~ Home ~ loginResponse", loginResponse)
 
     const usenavigation = useNavigation();
 
     const [showImage, setShowImage] = useState(true)
-
+    const DATA = [
+        {
+            image: videogif,
+            title: 'Training Videos',
+            screenName: "Traning"
+        },
+        {
+            image: loginResponse?.type === 'School' ? learning : Runninggif,
+            title: loginResponse?.type === 'School' ? 'Classes' : 'Animated Stories',
+            screenName: loginResponse?.type === 'School' ? 'Classess' : "AnimatedStories_2"
+        },
+        {
+            image: ChatMessengergif,
+            title: 'Chat',
+            screenName: "Chats"
+        },
+        {
+            image: loginResponse?.type === 'School' ? Profilegif : Profilegif,
+            title: loginResponse?.type === 'School' ? 'My Profile' : 'My Profile',
+            screenName: loginResponse?.type === 'School' ? 'Schoolprofile' : "Myprofile"
+        },
+        {
+            image: loginResponse?.type === 'School' ? stars : Historygif,
+            title: loginResponse?.type === 'School' ? 'Reviews & Rating' :'Watch History',
+            screenName: loginResponse?.type === 'School' ? 'review&Rating' : "WatchHistory"
+        },
+        {
+            image: Notificationgif,
+            title: 'Notifications',
+            screenName: "Notification"
+        },
+    ];
     const renderItem = ({ item }) => {
         return (
             <TouchableOpacity style={styles.card} onPress={() => props.navigation.navigate(item?.screenName)}>
@@ -69,7 +72,8 @@ const Home = (props) => {
 
     return (
         <View style={styles.dashboard}>
-            <StatusBar barStyle='dark-content' backgroundColor="#ffffff" />
+        <StatusBar
+        backgroundColor="#FF9B70"/>
             <View style={styles.costumheader}>
 
                 <View style={styles.leftview}>

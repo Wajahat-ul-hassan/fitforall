@@ -25,12 +25,12 @@ const AnimatedStories_2 = (props) => {
         {
             name: "Bullying",
             image: Punchesgif,
-            screenName: ''
+            screenName: 'Trainingvideo'
         },
         {
             name: "Work Out IS Fun ",
             image: Jumpinggif,
-            screenName: ''
+            screenName: 'Trainingvideo'
         }
     ]
     return (
@@ -49,7 +49,7 @@ const AnimatedStories_2 = (props) => {
                     {data.map((val) => {
                         const { name, image, screenName } = val
                         return (
-                            <TouchableOpacity onPress={() => props.navigation.navigate(screenName, { begineerVideos: val?.begineerVideos, advanceVideo: val?.advanceVideo })} style={Styles.body} >
+                            <TouchableOpacity onPress={() => props.navigation.navigate(screenName, { htitle:name })} style={Styles.body} >
                                 <View style={{ justifyContent: 'center', paddingLeft: 50 }}>
                                     <Text numberOfLines={2} style={{ color: "#707070", fontSize: 20, fontWeight: "bold", width: 120, textTransform: 'capitalize' }}>{name}</Text>
                                 </View>

@@ -1,26 +1,27 @@
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, Image, TextInput } from 'react-native';
 import React, { useState } from 'react';
 import { Icon } from 'react-native-elements';
-import Modal from 'react-native-modal';
+
 // import icon
-import { Share, profile, clipboard, twitter, whatsapp, facebook } from "../../assets/index"
+import { star, profile, clipboard, twitter, whatsapp, facebook } from "../../assets/index"
 
 // import components 
 import { Button, Header, Vedio, Input } from "../../component";
 
 // import model form native base 
+// import { Modal, FormControl, NativeBaseProvider } from "native-base";
 
 // import video player 
 import VideoPlayer from 'react-native-video-player';
 
 
-const Foot = (props) => {
-    const htitle = props.route.params.htitle
+const ReviewsRatings = () => {
+
     const [showModal, setShowModal] = useState(false);
 
     return (
         <View style={{ flex: 1, backgroundColor: "#ffffff" }}>
-            <Header title={htitle} lefticon />
+            <Header title="Reviews & Ratings" lefticon />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={{ backgroundColor: "#fff", flex: 1 }}>
                     <VideoPlayer
@@ -29,83 +30,40 @@ const Foot = (props) => {
                         video={{ uri: 'https://media3.giphy.com/media/WsjvRxj8RRxYZgIzzI/giphy.gif' }}
                     />
                     <View style={styles.container}>
-                        <View style={styles.container1}>
-                            <View style={styles.child1_View1}>
-                                <TouchableOpacity style={styles.btn_Active}>
-                                    <Icon
-                                        name='like2'
-                                        type='antdesign'
-                                        color='#FF9B70'
-                                        size={22}
-                                    /><Text style={styles.likeBtn}>Likes</Text>
-                                </TouchableOpacity>
-                                <TouchableOpacity>
-                                    <Icon
-                                        style={{ transform: [{ rotateY: '180deg' }] }}
-                                        name='dislike2'
-                                        type='antdesign'
-                                        color='#707070'
-                                        size={22}
-                                    /><Text style={styles.likeBtn}>Dislikes</Text>
-                                </TouchableOpacity>
-                            </View>
 
-                            <View style={styles.child_2}>
-                                <TouchableOpacity>
-                                    <Icon
-                                        name='hearto'
-                                        type='antdesign'
-                                        color='#707070'
-                                        size={22}
-                                    />
-                                </TouchableOpacity>
-                                <TouchableOpacity onPress={() => setShowModal(true)}>
-                                    <Image resizeMode='center' style={styles.shareimg} source={Share} />
-                                </TouchableOpacity>
+
+
+                        <View style={styles.meinView}>
+                            <TouchableOpacity activeOpacity={0.7}>
+                                <Text style={{ fontSize: 20, fontWeight: "bold", color: "#707070", textTransform: "capitalize" }}>
+                                    Push-Up
+                                </Text>
+                            </TouchableOpacity>
+                            <View style={{ flexDirection: "row", justifyContent: "space-between", width: 60 }}>
+                               <Image style={styles.star} source={star} />
+                                <Text style={{ fontSize: 11, color: "#707070", fontWeight: "bold", }}>
+                                    3 min
+                                </Text>
                             </View>
                         </View>
 
-
-                        <View style={{ flexDirection: "row", justifyContent: "space-between", marginLeft: 8, }}>
-                            <Text style={{ fontSize: 20, fontWeight: "bold", color: "#707070" }}>
-                                Toe Excercise
-                            </Text>
-                        </View>
                         <View style={styles.views}>
-                            <Text style={{ color: "#707070", marginRight: 5, }}>
-                                Trainer Caronia  |
+                            <Text style={{ color: "#707070", marginRight: 5, fontSize: 13 }}>
+                               Trainer Caroina  |
                             </Text>
-                            <Text style={{ color: "#707070", marginRight: 5, }}>
-                                225 views |
+                            <Text style={{ color: "#707070", marginRight: 5, fontSize: 13 }}>
+                                225 views  |
                             </Text>
-                            <Text style={{ color: "#707070", marginRight: 5, }}>
+                            <Text style={{ color: "#707070", marginRight: 5, fontSize: 13 }}>
                                 1 day ago
                             </Text>
                         </View>
-
-                        <View style={styles.child_3}>
-                            <Text style={styles.child3_heading}>Lore ipsum dolor sit amet, consectetur
-                                adipisicing elit, sed do.
-                            </Text>
-                            <Text style={styles.subHeading}>eiusmod tempor incididunt ut labore et  dolore magna aliqua.
-                                Ut enim ad minim veniam, quis nostrud
-                                exercitation ullamco laboris nisi ut aliquip ex
-                                ea commodo consequat. Duis aute irure dolor
-                                in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur. Excepteur sint
-                                occaecat cupidatat non proident, sunt in culpa
-                                qui officia deserunt mollit anim id est
-                                laborum.m ipsum dolor sit amet, consectetur
-                                adipiscing elit, sed do eiusmod tempor
-                            </Text>
-                        </View>
-
 
                     </View>
 
                     <View style={styles.commentbox}>
                         <Image resizeMode='cover' style={styles.userimage} source={profile} />
-                        <TextInput style={styles.userinput} placeholder="Add a Comment...." />
+                        <TextInput placeholderTextColor="#707070" style={styles.userinput} placeholder="Add a Comment...." />
                     </View>
 
                     <View style={styles.usercomment}>
@@ -115,12 +73,12 @@ const Foot = (props) => {
                             <Text style={styles.usertime}>|   2 hours ago</Text>
                         </View>
                         <View style={{ marginLeft: 10 }}>
-                            <Text style={styles.usercomment1}>
+                            <Text style={styles.user_coment}>
                                 Lorem ipsum Duis aute irure dolor in reprehen
                                 rit inarcu cursus euismod. </Text>
                         </View>
                         <View style={styles.usercommenticon}>
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     name='like2'
                                     type='antdesign'
@@ -129,7 +87,7 @@ const Foot = (props) => {
                                 /><Text style={styles.commentboxlike}>2</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     style={{ transform: [{ rotateY: '180deg' }] }}
                                     name='dislike2'
@@ -140,7 +98,7 @@ const Foot = (props) => {
                                 <Text style={styles.commentboxlike}>2</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     name='comment'
                                     type='MaterialIcons'
@@ -154,20 +112,20 @@ const Foot = (props) => {
 
 
 
-                    <View style={styles.usercomment1}>
+                    <View style={styles.user_comment}>
                         <View style={styles.commentrow1}>
                             <Image style={styles.commentuser} source={profile} />
                             <Text style={styles.username}>Alex |</Text>
                             <Text style={styles.usertime}>2 hours ago</Text>
                         </View>
                         <View style={{ marginLeft: 10 }}>
-                            <Text style={styles.usercomment1}>
+                            <Text style={styles.user_coment}>
                                 Lorem ipsum Duis aute irure dolor in reprehen
                                 rit inarcu cursus euismod. </Text>
                         </View>
                         <View style={styles.usercommenticon}>
 
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     name='like2'
                                     type='antdesign'
@@ -176,7 +134,7 @@ const Foot = (props) => {
                                 /><Text style={styles.commentboxlike}>2</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     style={{ transform: [{ rotateY: '180deg' }] }}
                                     name='dislike2'
@@ -186,7 +144,7 @@ const Foot = (props) => {
                                 /><Text style={styles.commentboxlike}>2</Text>
                             </TouchableOpacity>
 
-                            <TouchableOpacity style={styles.usercommentbtn}>
+                            <TouchableOpacity activeOpacity={0.7} style={styles.usercommentbtn}>
                                 <Icon
                                     name='comment'
                                     type='MaterialIcons'
@@ -199,35 +157,8 @@ const Foot = (props) => {
                 </View>
 
                 {/* Model area */}
-                <Modal isVisible={showModal} >
-                <View style={{backgroundColor:"#fff", paddingBottom:25}}>
-                    <View style={{ flexDirection: "row", justifyContent: "space-between",paddingHorizontal: 30, paddingVertical:10}}>
-                        <Text style={{ color: "#707070" ,fontSize:18 ,fontWeight:"bold" }}>Share</Text>
-                        <TouchableOpacity onPress={() => setShowModal(false)}>
-                            <Icon type="font-awesome" name="close" color={"#707070"} size={23} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={styles.modelcontiner}>
-                        <View style={styles.modelbody}>
-                            <Image style={styles.shareicon} source={clipboard} />
-                            <Text style={styles.icontext}>Copy</Text>
-                        </View>
-                        <View style={styles.modelbody}>
-                            <Image style={styles.shareicon} source={whatsapp} />
-                            <Text style={styles.icontext}>Whatsapp</Text>
-                        </View>
-                        <View style={styles.modelbody}>
-                            <Image style={styles.shareicon} source={facebook} />
-                            <Text style={styles.icontext}>Facebook</Text>
-                        </View>
-                        <View style={styles.modelbody}>
-                            <Image style={styles.shareicon} source={twitter} />
-                            <Text style={styles.icontext}>Twitter</Text>
-                        </View>
+              
 
-                    </View>
-                    </View>
-                </Modal>
             </ScrollView>
 
         </View>
@@ -241,8 +172,17 @@ const styles = StyleSheet.create({
     },
     views: {
         flexDirection: "row",
+        marginBottom:10,
         marginHorizontal: 10,
-        paddingVertical: 10,
+    },
+    meinView: {
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: 'flex-start',
+        marginHorizontal: 10,
+        height: 40,
+        marginTop: 10,
+        flexDirection: "row"
     },
     favview: {
         height: 300,
@@ -276,6 +216,12 @@ const styles = StyleSheet.create({
     shareimg: {
         width: 20,
         height: 20,
+    },
+    star: {
+        width: 18,
+        height: 18,
+        justifyContent: "center",
+        alignItems: "center",
     },
     likeBtn: {
         fontSize: 10,
@@ -345,9 +291,10 @@ const styles = StyleSheet.create({
         color: "#707070",
         fontSize: 14,
     },
-    usercomment1: {
+    user_coment: {
         marginTop: 10,
         paddingHorizontal: 50,
+        color: "#707070",
     },
     usercommenticon: {
         flexDirection: "row",
@@ -365,7 +312,7 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         fontSize: 12
     },
-    usercomment1: {
+    user_comment: {
         marginLeft: 40,
     },
     modelheader: {
@@ -377,7 +324,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         textAlign: "center",
         alignItems: "center",
-        // padding: 10,
+        padding: 10,
     },
     shareicon: {
         width: 50,
@@ -386,8 +333,9 @@ const styles = StyleSheet.create({
     },
     modelcontiner: {
         flexDirection: "row",
-        justifyContent: "space-evenly",
-        backgroundColor: "#fff"
+        justifyContent: "center",
+        textAlign: "center",
+        alignSelf: "center"
     },
     icontext: {
         color: "#707070",
@@ -402,4 +350,4 @@ const styles = StyleSheet.create({
     },
 })
 
-export default Foot
+export default ReviewsRatings

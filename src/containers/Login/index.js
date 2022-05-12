@@ -4,8 +4,6 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 import { sign_in, FB, pin, } from "../../assets/index";
 import { Button, Header } from "../../component";
-
-
 const Login = (props) => {
     return (
         <View style={{ flex: 1, backgroundColor: "#ffffff" }}>

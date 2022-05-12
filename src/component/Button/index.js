@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         borderRadius: 10,
-        height: 45,
+        height: 50,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -37,7 +37,8 @@ const styles = StyleSheet.create({
         fontWeight: "bold",
         letterSpacing: 1,
         color: "white"
-    }
+    },
+    
 })
 
 export default Button;

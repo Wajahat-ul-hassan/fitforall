@@ -35,7 +35,7 @@ const OnBoardingScreen = (props) => {
                         <View style={styles.circle}></View>
                     </View>
 
-                    <Button btnonpress={() => setCurrentindex(currentindex + 1)} btnViewStyle={styles.btn} btntxtstyle={styles.btntext} title="Start" />
+                   
                 </View>
 
                 </ScrollView>
@@ -61,7 +61,7 @@ const OnBoardingScreen = (props) => {
                                 <View style={styles.circle_Active}></View>
                                 <View style={styles.circle}></View>
                             </View>
-                            <Button btnonpress={() => setCurrentindex(currentindex + 1)} btnViewStyle={styles.btn} btntxtstyle={styles.btntext} title="Start" />
+                            
                         </View>
                     </ScrollView>
 

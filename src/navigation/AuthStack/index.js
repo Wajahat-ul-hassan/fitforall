@@ -1,6 +1,6 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
-import { OnBoarding, GetStartScreen, Login, SignIn, Register, PasswordReset1, VerifyCode, EmailVerifySuccess, NewPassword, ResetPasswordSuccess } from "../../containers"
+import { OnBoarding, GetStartScreen, Login, SignIn, Register, PasswordReset1, SchoolRegister, VerifyCode, EmailVerifySuccess, NewPassword, ResetPasswordSuccess, LoginType } from "../../containers"
 
 
 const AuthStack = createStackNavigator();
@@ -13,6 +13,8 @@ const AuthStackScreen = () => {
       <AuthStack.Screen name="Register" component={Register} />
       <AuthStack.Screen name="PasswordReset1" component={PasswordReset1} />
       <AuthStack.Screen name="VerifyCode" component={VerifyCode} />
+      <AuthStack.Screen name="LoginType" component={LoginType} />
+      <AuthStack.Screen name="SchoolRegister" component={SchoolRegister} />
       <AuthStack.Screen name="NewPassword" component={NewPassword} />
       <AuthStack.Screen name="EmailVerifySuccess" component={EmailVerifySuccess} />
       <AuthStack.Screen name="ResetPasswordSuccess" component={ResetPasswordSuccess} />

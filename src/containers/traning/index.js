@@ -42,7 +42,7 @@ const Traning = (props) => {
                     {data.map((val) => {
                         const { name, image } = val
                         return (
-                            <TouchableOpacity onPress={() => props.navigation.navigate(val?.screenName, { begineerVideos: val?.begineerVideos, advanceVideo: val?.advanceVideo })} style={Styles.body}>
+                            <TouchableOpacity onPress={() => props.navigation.navigate(val?.screenName, {htitle:val?.name})} style={Styles.body}>
                                 <View style={{ justifyContent: 'center', paddingLeft: 50 }}>
                                     <Text numberOfLines={2} style={{ color: "#707070", fontSize: 17, fontWeight: "bold", width: 120 }}>{name}</Text>
                                 </View>
